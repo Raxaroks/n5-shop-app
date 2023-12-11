@@ -1,0 +1,27 @@
+
+.sidebar__nav {
+  list-style: none;
+  font-size: 1.4rem;
+  margin-top: 3.5rem;
+
+  &-item {
+    transition: all .4s;
+
+    a {
+      display: block;
+      padding: 1.6rem;
+      color: var(--card-label-color);
+      text-decoration: none;
+    }
+
+    &:hover:not(.sidebar__nav-item--active) {
+      // color: var(--background-color);
+      background-color: var(--color-dimmed-gray);
+    }
+
+    &--active {
+      background-color: var(--color-gray-dark);
+      a { color: white !important; }
+    }
+  }
+}
