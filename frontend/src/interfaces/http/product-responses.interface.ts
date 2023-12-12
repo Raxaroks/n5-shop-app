@@ -11,7 +11,7 @@ export interface GetProductResponse {
   products: Product[]
 }
 
-export interface UpdateProductResponse extends HttpResponse {
+export interface CreateUpdateProductResponse extends HttpResponse {
   product: Product;
 }
   

@@ -5,6 +5,7 @@ import { Product } from '../interfaces/entities/product.interface';
 import { Spinner, ProductCard } from '../components';
 import { AppConfig } from '../config/app.config';
 import { ShoppingCartContext } from '../context/shopping-cart';
+import { toast } from 'react-toastify';
 
 export type ProductPagination = Pagination & {
   products: Product[]
@@ -36,6 +37,8 @@ export const ProductListPage = () => {
       setLoading(false);
     } catch (error) {
       console.warn(error);
+      toast.error('Error inesperado!');
+      
       setLoading(false);
     }
   }, [pagination.page, items] );

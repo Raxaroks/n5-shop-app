@@ -14,6 +14,7 @@ export const productRoutes: Route[] = [
     to: 'create-product',
     path: '/create-product',
     name: `Crear un producto`,
-    Component: CreateProductPage
+    Component: CreateProductPage,
+    Provider: ProductProvider
   }
 ];

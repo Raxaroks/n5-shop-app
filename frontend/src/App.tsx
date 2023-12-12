@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { AppConfig } from './config/app.config';
 import { AppRouter } from './routes';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   useEffect( () => {
@@ -10,6 +12,7 @@ function App() {
 	return (
 		<>
       <AppRouter />
+      <ToastContainer className='fs-12' />
     </>
 	);
 }

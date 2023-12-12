@@ -3,6 +3,7 @@ import { ShoppingCartContext } from '../context/shopping-cart';
 import { formatNumberToCurrency, toTitleCase } from '../helpers';
 import { ProductService } from '../services/product.service';
 import { Product } from '../interfaces/entities/product.interface';
+import { toast } from 'react-toastify';
 
 export interface ShoppingCartProps {
   productService: ProductService
@@ -36,8 +37,12 @@ export const ShoppingCart = ({ productService }: ShoppingCartProps) => {
         delete toUpdate.id;
         return productService.update(id!, toUpdate)
       } );
-      
-      await Promise.resolve(promises);
+
+      await toast.promise(Promise.all(promises), {
+        pending: 'Comprando tu carrito...',
+        success: 'Compra exitosa!',
+        error: 'Hubo un problema al contactar al servidor...'
+      });
       
       // clear cart
       clearCart();

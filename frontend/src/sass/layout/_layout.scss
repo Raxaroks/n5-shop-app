@@ -100,4 +100,45 @@
     font-size: 1.6rem;
     color: var(--text-color)
   }  
+
+  &__form {
+    &-label {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 1.5rem;
+
+      &-input-error {
+        border: .2rem solid red !important;
+      }
+
+      input {
+        font-family: 'Roboto', sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        width: 100%;
+        padding: 1.2rem 2rem;
+        margin: .4rem 0;
+        border-radius: .8rem;
+        border: .3rem solid var(--color-dimmed-gray);
+        box-sizing: border-box;
+        transition: all .4s;
+
+        &:focus {
+          border: .3rem solid aqua;
+        }
+      }
+    }
+
+    &-field__error {
+      margin-top: 0.5rem;
+      color: red;
+      font-weight: bold;
+    }
+
+    &-row {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
 }
