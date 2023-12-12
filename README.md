@@ -11,6 +11,9 @@ It consists of creating a web client, in which you can view a list of products, 
 [![MongoDB][Mongodb.io]][Mongo-url]
 [![Docker][Docker.io]][Docker-url]
 
+## Demo
+<a href='https://n5-shop-app-production.up.railway.app'>Check demo hosted on Railway</a>
+
 
 [React.io]: https://img.shields.io/badge/react-00C6F7?style=for-the-badge&logo=react&logoColor=white
 [Nodejs.io]: https://img.shields.io/badge/nodejs-43853D?style=for-the-badge&logo=node.js&logoColor=white
