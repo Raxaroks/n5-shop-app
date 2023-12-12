@@ -5,7 +5,7 @@
 /public
 
 # environment files
-.env
+.env*
 
 # Logs
 logs

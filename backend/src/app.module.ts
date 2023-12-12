@@ -11,13 +11,17 @@ import { join } from 'path';
 @Module({
   imports: [
     ConfigModule.forRoot(configOptions),
-    MongooseModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: async (configService: ConfigService) => ({
-        uri: configService.get<string>('MONGODB_URL'),
-      }),
-    }),
+    MongooseModule.forRoot(
+      AppConfig().mongoDb.products.hostUrl,
+      { dbName: AppConfig().mongoDb.products.name }
+    ),
+    // MongooseModule.forRootAsync({
+    //   imports: [ConfigModule],
+    //   inject: [ConfigService],
+    //   useFactory: async (configService: ConfigService) => ({
+    //     uri: configService.get<string>('MONGODB_URL'),
+    //   }),
+    // }),
     ServeStaticModule.forRoot({
       rootPath: (AppConfig().environment === 'dev') 
       ? join(__dirname, '..', 'public') 

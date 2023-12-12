@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  shop-app:
+    depends_on:
+      - db
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: shop-app-docker
+    container_name: shop-app
+    restart: always
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      PORT: ${PORT}
+      MONGODB_PRODUCTS_COLLECTION: ${MONGODB_PRODUCTS_COLLECTION}
+      MONGODB_URL: ${MONGODB_URL}
+  
+  db:
+    image: mongo:5
+    container_name: mongo-products
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGODB_DATABASE: ${MONGODB_PRODUCTS_COLLECTION}
+    volumes:
+      - ./mongo:/data/db
