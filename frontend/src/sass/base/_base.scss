@@ -84,6 +84,13 @@
   }
 }
 
+// responsive breakpoints
+$breakpoint-largest: 75em; // 1200px
+$breakpoint-large: 68.75em; // 1100px
+$breakpoint-medium: 56.25em; // 900px
+$breakpoint-small: 37.5em; // 600px
+$breakpoint-smallest: 31.25em; // 500px
+
 * {
 	margin: 0;
 	padding: 0;
@@ -98,6 +105,9 @@
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
+
+  @media only screen and (max-width: $breakpoint-large) { font-size: 50%; }
+  @media only screen and (max-width: $breakpoint-small) { font-size: 45%; }
 }
 
 body {

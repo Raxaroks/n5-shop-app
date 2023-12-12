@@ -15,6 +15,7 @@ export class ProductService {
 
   private handleExceptions(error: any) {
     console.warn(error);
+    if (error.code === 11000) throw new BadRequestException('There is already a product with that key')
     throw new InternalServerErrorException('Unexpected error, please check the logs...');
   }
 

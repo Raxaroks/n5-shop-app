@@ -66,6 +66,12 @@
     border-radius: 1rem;
     background: var(--background-color);
     overflow: hidden;
+
+    @media only screen and (max-width: $breakpoint-largest) {
+      margin: 0;
+      max-width: 100%;
+      width: 100%;
+    }
   }
 
   &__header {
@@ -80,6 +86,9 @@
 
   &__content {
     display: flex;
+    @media only screen and (max-width: $breakpoint-medium) {
+      flex-direction: column;
+    }
   }
 
   &__sidebar {

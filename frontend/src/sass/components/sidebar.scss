@@ -49,5 +49,9 @@
     text-align: center;
     color: var(--text-color);
     padding: 2rem;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      display: none;
+    }
   }
 }
