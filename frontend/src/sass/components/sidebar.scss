@@ -1,27 +1,53 @@
 
-.sidebar__nav {
-  list-style: none;
-  font-size: 1.4rem;
-  margin-top: 3.5rem;
-
-  &-item {
-    transition: all .4s;
-
-    a {
-      display: block;
-      padding: 1.6rem;
-      color: var(--card-label-color);
-      text-decoration: none;
+.sidebar {
+  &__nav {
+    list-style: none;
+    font-size: 1.4rem;
+    margin-top: 3.5rem;
+  
+    &-item {
+      transition: all .4s;
+  
+      a {
+        display: block;
+        padding: 1.6rem;
+        color: var(--card-label-color);
+        text-decoration: none;
+      }
+  
+      &:hover:not(.sidebar__nav-item--active) {
+        // color: var(--background-color);
+        background-color: var(--color-dimmed-gray);
+      }
+  
+      &--active {
+        background-color: var(--color-gray-dark);
+        a { color: white !important; }
+      }
     }
+  }
 
-    &:hover:not(.sidebar__nav-item--active) {
-      // color: var(--background-color);
-      background-color: var(--color-dimmed-gray);
-    }
+  &__cart {
+    font-size: 1.2rem;
+    padding: 2rem;
+    color: var(--text-color);
+    border-top: 1px solid var(--color-dimmed-gray);
+    border-bottom: 1px solid var(--color-dimmed-gray);
+    max-height: 30rem;
+    overflow-y: scroll;
 
-    &--active {
-      background-color: var(--color-gray-dark);
-      a { color: white !important; }
-    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar { display: none; }
+  }
+
+  &__footer {
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--text-color);
+    padding: 2rem;
   }
 }

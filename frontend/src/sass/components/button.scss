@@ -12,6 +12,26 @@
   border: 0.1rem solid var(--color-dimmed-gray);
   transition-duration: .4s;
 
+  &-secondary {
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 1rem;
+    padding: 0rem 2rem;
+    height: 3.6rem;
+    color: var(--text-color);
+	  background-color: var(--background-color);
+    border-radius: 1rem;
+    box-shadow: var(--card-box-shadow-1) 0rem .1rem .1rem,
+              var(--card-background-color) 0rem 0rem .1rem .1rem;
+    border: 0.1rem solid var(--color-dimmed-gray);
+    transition-duration: .4s;
+
+    &:hover {
+      color: var(--background-color);
+	    background-color: var(--text-color);
+    }
+  }
+
   &:hover {
     background-color: var(--background-color);
     color: var(--text-color)

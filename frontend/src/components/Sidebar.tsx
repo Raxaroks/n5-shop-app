@@ -1,5 +1,7 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { productRoutes } from '../routes'
+import { ShoppingCart } from '.';
+import { ProductService } from '../services/product.service';
 
 
 export const Sidebar = () => {
@@ -20,6 +22,13 @@ export const Sidebar = () => {
           ))
         }
       </ul>
+
+      {/* shopping cart */}
+      <ShoppingCart productService={ new ProductService() } />
+
+      <footer className="sidebar__footer">
+        &copy; 2023. Hecho por Andrés Ornelas. Derechos reservados.
+      </footer>
     </nav>
   )
 }

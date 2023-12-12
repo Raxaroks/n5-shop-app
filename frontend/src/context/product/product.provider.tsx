@@ -1,6 +1,6 @@
 import { ProviderProps } from '../../interfaces/common/provider.interface';
 import { ProductService } from '../../services/product.service';
-import { ProductContext } from './product.context';
+import { ProductContext } from "./";
 
 export const ProductProvider = ({ children }: ProviderProps) => {
   const productService = new ProductService();

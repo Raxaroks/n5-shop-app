@@ -9,21 +9,23 @@ export const AppRouter = () => {
       fallback={
         <span>Loading...</span>
       }>
-        <BrowserRouter>
-          <Routes>
-            {
-              appRoutes.map(
-                ({ to, path, Component }) => (
-                  <Route key={ to } path={ path } element={ <Component/> } />
-                )
+      <BrowserRouter>
+        <Routes>
+          {
+            appRoutes.map(
+              ({ to, path, Component, Provider }) => (
+                <Route key={to} path={path} element={(Provider)
+                  ? (<Provider><Component /></Provider>)
+                  : (<Component />)} />
               )
-            }
-            <Route path='/*' element={
-              <Navigate to={ appRoutes[0].to } replace />
-            }/>
-          </Routes>
-        </BrowserRouter>
-      </Suspense>
+            )
+          }
+          <Route path='/*' element={
+            <Navigate to={appRoutes[0].to} replace />
+          } />
+        </Routes>
+      </BrowserRouter>
+    </Suspense>
   )
 }
 

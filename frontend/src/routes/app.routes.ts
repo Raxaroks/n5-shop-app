@@ -2,6 +2,7 @@ import { LazyExoticComponent } from 'react';
 import { AppConfig } from '../config/app.config';
 import { MainPage } from '../screens';
 import { ProviderProps } from "../interfaces/common/provider.interface";
+import { ShoppingCartProvider } from '../context/shopping-cart';
 
 export type JSXFuncionalComponent = () => JSX.Element;
 export type JSXFunctionalProvider = (props: ProviderProps) => JSX.Element
@@ -19,6 +20,7 @@ export const appRoutes: Route[] = [
     to: '',
     path: '*',
     name: `${ AppConfig().app.name }`,
-    Component: MainPage
+    Component: MainPage,
+    Provider: ShoppingCartProvider
   }
 ]

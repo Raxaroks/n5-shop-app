@@ -4,6 +4,7 @@ import { Pagination } from '../interfaces/common';
 import { Product } from '../interfaces/entities/product.interface';
 import { Spinner, ProductCard } from '../components';
 import { AppConfig } from '../config/app.config';
+import { ShoppingCartContext } from '../context/shopping-cart';
 
 export type ProductPagination = Pagination & {
   products: Product[]
@@ -13,19 +14,19 @@ export const ProductListPage = () => {
   const [loading, setLoading] = useState(false);
   const [pagination, setPagination] = useState<ProductPagination>({
     total: 0,
-    limit: 6,
+    limit: 5,
     page: 1,
     products: []
   });
 
   const productService = useContext(ProductContext);
+  const { items } = useContext(ShoppingCartContext);
 
   const fetchUsers = useMemo( () => async () => {
     try {
       setLoading(true);
       const { limit, page } = pagination;
       const response = await productService.findAll(limit, page);
-      // console.log(response);
 
       setPagination({
         ...pagination,
@@ -37,7 +38,7 @@ export const ProductListPage = () => {
       console.warn(error);
       setLoading(false);
     }
-  }, [pagination.page] );
+  }, [pagination.page, items] );
 
   const movePage = (amount: number) => {
     const { page, } = pagination;

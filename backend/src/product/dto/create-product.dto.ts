@@ -2,7 +2,7 @@ import { IsNumber, IsOptional, IsString, MinLength } from 'class-validator';
 
 export class CreateProductDto {
   @IsString()
-  @MinLength(10)
+  @MinLength(3)
   name: string;
   
   @IsNumber()
